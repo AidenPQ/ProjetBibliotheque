@@ -1,7 +1,7 @@
 /*
  * main.cpp
  *
- *  Created on: 10 déc. 2019
+ *  Created on: 10 dï¿½c. 2019
  *      Author: ngand
  */
 
@@ -11,5 +11,6 @@ using namespace std;
 
 int main(){
 	cout << "Hello World" << endl;
+	cout << "Hello PQ" << endl;
 	return 0;
 }
