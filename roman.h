@@ -18,6 +18,7 @@ public:
 	Roman(string, string, string, string, string, string="");
 	Roman(const Roman);
 	void affiche();
+	string getGenre() const;
 
 };
 
