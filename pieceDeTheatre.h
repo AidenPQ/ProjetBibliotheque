@@ -15,7 +15,7 @@ class PieceDeTheatre: public Livre{
 private:
 	string siecle;
 public:
-	PieceDeTheatre(string, string, string, string, string, string);
+	PieceDeTheatre(string, string, string, string, string, string="");
 	PieceDeTheatre(const PieceDeTheatre);
 	void affiche();
 

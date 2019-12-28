@@ -15,7 +15,7 @@ class Roman: public Livre{
 private:
 	string genre;
 public:
-	Roman(string, string, string, string, string, string);
+	Roman(string, string, string, string, string, string="");
 	Roman(const Roman);
 	void affiche();
 
