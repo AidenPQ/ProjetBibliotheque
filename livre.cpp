@@ -19,7 +19,14 @@ Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
 }
 
 
-
+void Livre::affiche(){
+	cout << "Titre: " << titre << endl;
+	cout << "Auteur: " << auteur << endl;
+	cout << "ISBN: " << ISBN << endl;
+	cout << "Public visee: " << publique << endl;
+	cout << "Code du Livre: " << code_livre << endl;
+	cout << "Emprunte : " << etatEmprunt << endl;
+}
 
 void Livre::setCode_Livre(string cdl){
 	code_livre = cdl;
