@@ -17,7 +17,7 @@ string PieceDeTheatre::getSiecle()const{
 
 }
 
-PieceDeTheatre::PieceDeTheatre(const PieceDeTheatre rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
+PieceDeTheatre::PieceDeTheatre(const PieceDeTheatre &rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
 	siecle= rom.getSiecle();
 }
 

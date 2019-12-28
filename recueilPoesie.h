@@ -16,7 +16,7 @@ private:
 	string formatPoesie;
 public:
 	RecueilPoesie(string, string, string, string, string, string="");
-	RecueilPoesie(const RecueilPoesie);
+	RecueilPoesie(const RecueilPoesie&);
 	void affiche();
 	string getFormat()const;
 

@@ -16,7 +16,7 @@ private:
 	string siecle;
 public:
 	PieceDeTheatre(string, string, string, string, string, string="");
-	PieceDeTheatre(const PieceDeTheatre);
+	PieceDeTheatre(const PieceDeTheatre&);
 	void affiche();
 	string getSiecle() const;
 

@@ -18,7 +18,7 @@ string Album::getType()const{
 
 }
 
-Album::Album(const Album rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
+Album::Album(const Album &rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
 	typeIllustration= rom.getType();
 }
 

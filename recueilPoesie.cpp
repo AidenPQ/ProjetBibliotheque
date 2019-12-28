@@ -18,7 +18,7 @@ string RecueilPoesie::getFormat()const{
 
 }
 
-RecueilPoesie::RecueilPoesie(const RecueilPoesie rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
+RecueilPoesie::RecueilPoesie(const RecueilPoesie &rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
 	formatPoesie= rom.getFormat();
 }
 
