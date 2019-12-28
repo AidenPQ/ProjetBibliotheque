@@ -18,6 +18,7 @@ public:
 	PieceDeTheatre(string, string, string, string, string, string="");
 	PieceDeTheatre(const PieceDeTheatre);
 	void affiche();
+	string getSiecle() const;
 
 };
 

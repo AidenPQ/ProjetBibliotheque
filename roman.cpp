@@ -20,7 +20,8 @@ Roman::Roman(const Roman &rom) : Livre(rom.getAuteur(), rom.getTitre(), rom.getI
 }
 
 void Roman::affiche(){
-
+	Livre::affiche();
+	cout<<"Genre:"<<genre<<endl;
 }
 
 string Roman::getGenre() const{
