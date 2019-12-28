@@ -15,6 +15,14 @@ Roman::Roman(string aut, string tit, string isbn, string pub, string gnr, string
 }
 
 
-Roman::Roman(const Roman rom) : Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
+Roman::Roman(const Roman &rom) : Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
 	genre = rom.getGenre();
+}
+
+void Roman::affiche(){
+
+}
+
+string Roman::getGenre() const{
+	return genre;
 }

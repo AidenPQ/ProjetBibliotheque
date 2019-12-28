@@ -17,7 +17,12 @@ private:
 
 public:
 	NoeudLivre(Livre l);
+	NoeudLivre(Livre l, NoeudLivre* sv);
 
+	Livre getLivre() const;
+	NoeudLivre* getSuivant() const;
+
+	void setSuivant(NoeudLivre* sv);
 };
 
 
