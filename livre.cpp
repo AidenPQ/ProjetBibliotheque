@@ -9,6 +9,15 @@
 #include <iostream>
 using namespace std;
 
+Livre::Livre(){
+	auteur = "";
+	titre = "";
+	ISBN = "";
+	code_livre = "";
+	publique = "";
+	etatEmprunt = false;
+}
+
 Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
 	auteur = aut;
 	titre = tit;
@@ -16,6 +25,16 @@ Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
 	publique = pub;
 	code_livre = cdl;
 	etatEmprunt = false;
+}
+
+Livre::Livre(const Livre &l){
+	auteur = l.getAuteur();
+	titre = l.getTitre();
+	ISBN = l.getISBN();
+	publique = l.getPublique();
+	code_livre = l.getCode_livre();
+	etatEmprunt = false;
+
 }
 
 
@@ -26,6 +45,14 @@ void Livre::affiche(){
 	cout << "Public visee: " << publique << endl;
 	cout << "Code du Livre: " << code_livre << endl;
 	cout << "Emprunte : " << etatEmprunt << endl;
+}
+
+bool Livre::Equals(Livre l)
+{
+	if((auteur == l.getAuteur())&&(titre == l.getTitre())&&(ISBN == l.getISBN())&&(code_livre == l.getCode_livre())&&(publique == l.getPublique())){
+		return true;
+	}
+	return false;
 }
 
 void Livre::setCode_Livre(string cdl){

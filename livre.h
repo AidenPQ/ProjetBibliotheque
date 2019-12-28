@@ -12,6 +12,7 @@
 using namespace std;
 
 class Livre{
+
 protected:
 	string code_livre;
 	string auteur;
@@ -21,7 +22,9 @@ protected:
 	bool etatEmprunt;
 
 public:
+	Livre();
 	Livre(string, string, string, string, string = "");
+	Livre(const Livre&);
 	string getCode_livre() const;
 	string getAuteur() const;
 	string getTitre() const;
@@ -33,6 +36,7 @@ public:
 	void setCode_Livre(string);
 
 	void affiche();
+	bool Equals(Livre);
 
 };
 

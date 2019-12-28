@@ -1,5 +1,5 @@
 /*
- * noeudLivre.h
+ * noeudlivre.h
  *
  *  Created on: 28 déc. 2019
  *      Author: ngand
@@ -7,25 +7,23 @@
 
 #ifndef NOEUDLIVRE_H_
 #define NOEUDLIVRE_H_
-
 #include "livre.h"
 
-class NoeudLivre{
+class Noeudlivre{
 private:
-	Livre livre;
-	NoeudLivre* suivant;
+	Livre lvr;
+	Noeudlivre *suivant;
 
 public:
-	NoeudLivre(Livre l);
-	NoeudLivre(Livre l, NoeudLivre* sv);
+	Noeudlivre(Livre lv);
+	Noeudlivre(Livre lv, Noeudlivre* sv);
 
 	Livre getLivre() const;
-	NoeudLivre* getSuivant() const;
+	Noeudlivre* getSuivant();
 
-	void setSuivant(NoeudLivre* sv);
+	void setSuivant(Noeudlivre* sv);
+
 };
-
-
 
 
 #endif /* NOEUDLIVRE_H_ */
