@@ -16,6 +16,7 @@ private:
 	string typeIllustration;
 public:
 	Album(string, string, string, string, string, string);
+	Album (const Album);
 	void affiche();
 
 };

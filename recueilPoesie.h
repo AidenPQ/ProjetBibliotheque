@@ -16,6 +16,7 @@ private:
 	string formatPoesie;
 public:
 	RecueilPoesie(string, string, string, string, string, string);
+	RecueilPoesie(const RecueilPoesie);
 	void affiche();
 
 };
