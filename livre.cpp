@@ -1,0 +1,61 @@
+/*
+ * livre.cpp
+ *
+ *  Created on: 28 déc. 2019
+ *      Author: ngand
+ */
+
+#include "livre.h"
+#include <iostream>
+using namespace std;
+
+Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
+	auteur = aut;
+	titre = tit;
+	ISBN = isbn;
+	publique = pub;
+	code_livre = cdl;
+	etatEmprunt = false;
+}
+
+
+
+
+void Livre::setCode_Livre(string cdl){
+	code_livre = cdl;
+}
+
+void Livre::setEtatEmprunt(bool o){
+	etatEmprunt = o;
+}
+
+
+
+string Livre::getAuteur() const{
+	return auteur;
+}
+
+string Livre::getTitre() const{
+	return titre;
+}
+
+string Livre::getISBN() const{
+	return ISBN;
+}
+
+string Livre::getPublique() const{
+	return publique;
+}
+
+string Livre::getCode_livre() const{
+	return code_livre;
+}
+
+bool Livre::getEtatEmprunt() const{
+	return etatEmprunt;
+}
+
+
+
+
+

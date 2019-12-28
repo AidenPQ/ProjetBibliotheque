@@ -22,11 +22,12 @@ protected:
 
 public:
 	Livre(string, string, string, string, string = "");
-	Livre(const Livre);
 	string getCode_livre() const;
 	string getAuteur() const;
 	string getTitre() const;
 	string getPublique() const;
+	string getISBN() const;
+	bool getEtatEmprunt() const;
 
 	void setEtatEmprunt(bool);
 	void setCode_Livre(string);
