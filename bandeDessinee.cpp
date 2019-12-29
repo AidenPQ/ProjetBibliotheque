@@ -8,7 +8,7 @@
 using namespace std;
 #include "bandeDessinee.h"
 
-BandeDessinee::BandeDessinee(string aut, string tit, string isbn, string pub, string cdl, string type):Livre(aut, tit, isbn,pub,cdl){
+BandeDessinee::BandeDessinee(string aut, string tit, string isbn, string pub, string type, string cdl):Livre(aut, tit, isbn,pub,cdl){
 	this->dessinateur=type;
 
 }

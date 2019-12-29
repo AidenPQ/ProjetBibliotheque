@@ -19,6 +19,7 @@ public:
 
 	void ajoute(Livre);
 	void enleve(Livre);
+	Livre recherche(string) throw(int);
 	void affiche();
 
 

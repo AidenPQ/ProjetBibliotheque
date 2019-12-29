@@ -9,7 +9,7 @@
 using namespace std;
 #include "recueilPoesie.h"
 
-RecueilPoesie::RecueilPoesie(string aut, string tit, string isbn, string pub, string cdl, string type):Livre(aut, tit, isbn,pub,cdl){
+RecueilPoesie::RecueilPoesie(string aut, string tit, string isbn, string pub, string type, string cdl):Livre(aut, tit, isbn,pub,cdl){
 	this->formatPoesie=type;
 
 }

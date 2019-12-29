@@ -33,6 +33,17 @@ void ListeNoeudlivre::enleve(Livre l){
 	}
 }
 
+Livre ListeNoeudlivre::recherche(string code) throw(int)
+{
+	for(Noeudlivre *courant = premier; courant != NULL ; courant = courant->getSuivant()){
+		if(courant->getLivre().getCode_livre() == code){
+			return courant->getLivre();
+		}
+	}
+	cout << "Livre Non existant" << endl;
+	throw 0;
+}
+
 void ListeNoeudlivre::affiche(){
 	for(Noeudlivre *courant = premier; courant != NULL; courant = courant->getSuivant()){
 		courant->getLivre().affiche();
