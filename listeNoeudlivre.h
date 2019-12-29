@@ -19,6 +19,8 @@ public:
 
 	void ajoute(Livre);
 	void enleve(Livre);
+	void affiche();
+
 
 	Noeudlivre* getPremier();
 	void setPremier(Noeudlivre*);

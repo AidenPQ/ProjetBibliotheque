@@ -24,13 +24,19 @@ void ListeNoeudlivre::enleve(Livre l){
 		delete(premier);
 		premier = s;
 	}
-	for(Noeudlivre *courant = premier->getSuivant(); courant->getSuivant() != NULL; courant->getSuivant()){
-		if(l.Equals(courant->getLivre())){
-			Noeudlivre* s = courant->getSuivant();
-			delete(courant);
-			courant = s;
+	for(Noeudlivre *courant = premier; courant->getSuivant() != NULL ; courant = courant->getSuivant()){
+		if(l.Equals(courant->getSuivant()->getLivre())){
+			Noeudlivre *s = courant->getSuivant()->getSuivant();
+			courant->setSuivant(s);
 			break;
 		}
+	}
+}
+
+void ListeNoeudlivre::affiche(){
+	for(Noeudlivre *courant = premier; courant != NULL; courant = courant->getSuivant()){
+		courant->getLivre().affiche();
+		cout << "" << endl;
 	}
 }
 
