@@ -8,17 +8,17 @@
 
 #include "noeudlivre.h"
 
-Noeudlivre::Noeudlivre(Livre lv){
+Noeudlivre::Noeudlivre(Livre* lv){
 	lvr = lv;
 	suivant = NULL;
 }
 
-Noeudlivre::Noeudlivre(Livre lv, Noeudlivre *sv){
+Noeudlivre::Noeudlivre(Livre* lv, Noeudlivre *sv){
 	lvr = lv;
 	suivant = sv;
 }
 
-Livre Noeudlivre::getLivre() const{
+Livre* Noeudlivre::getLivre() const{
 	return lvr;
 }
 

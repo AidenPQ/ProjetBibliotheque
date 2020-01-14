@@ -7,8 +7,10 @@
 #include <iostream>
 using namespace std;
 #include "adherent.h"
+#include "bibliotheque.h"
 
-Adherent::Adherent(string name, string surname, Bibliotheque biblio, string adr, string numadh){
+Adherent::Adherent(string name, string surname, Bibliotheque biblio, string adr, string numadh) : listeEmprunt()
+{
 	nom=name;
 	prenom=surname;
 	biblioInscrit=biblio;
@@ -19,11 +21,16 @@ Adherent::Adherent(string name, string surname, Bibliotheque biblio, string adr,
 
 void Adherent::empruntLivre(string code){
 	if(nbrEmpruntAuto>0){
-		Livre emprunt= biblioInscrit.getListeLivres().recherche(code);
-		if (emprunt ==false) {
-			listeEmprunt[nbrEmpruntAuto-1]=emprunt;
-					listeEmprunt[nbrEmpruntAuto-1].setEtatEmprunt(true);
-					nbrEmpruntAuto--;
+		Livre* emprunt = NULL;
+		emprunt = biblioInscrit.getListeLivres().recherche(code);
+		if (!emprunt->getEtatEmprunt())
+		{
+			emprunt->setEtatEmprunt(true);
+			listeEmprunt.ajoute(emprunt);
+			nbrEmpruntAuto--;
+		}
+		else{
+			cout << "Livre Indisponible pour emprunt" << endl;
 		}
 
 }
@@ -33,13 +40,9 @@ void Adherent::empruntLivre(string code){
 
 }
 
-void Adherent::rendreLivre(Livre livre){
-	for(int i=0;i<10;i++){
-		if(livre == listeEmprunt[i]){
-			listeEmprunt[i]= NULL;
-		}
-	}
-	livre.setEtatEmprunt(false);
+void Adherent::rendreLivre(Livre* livre){
+	listeEmprunt.enleve(livre);
+	livre->setEtatEmprunt(false);
 	nbrEmpruntAuto++;
 
 }

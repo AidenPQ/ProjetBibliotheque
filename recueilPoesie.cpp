@@ -11,6 +11,7 @@ using namespace std;
 
 RecueilPoesie::RecueilPoesie(string aut, string tit, string isbn, string pub, string type, string cdl):Livre(aut, tit, isbn,pub,cdl){
 	this->formatPoesie=type;
+	this->categorie = "recueilPeosie";
 
 }
 string RecueilPoesie::getFormat()const{
@@ -20,6 +21,7 @@ string RecueilPoesie::getFormat()const{
 
 RecueilPoesie::RecueilPoesie(const RecueilPoesie &rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
 	formatPoesie= rom.getFormat();
+	this->categorie = "recueilPoesie";
 }
 
 void RecueilPoesie::affiche(){

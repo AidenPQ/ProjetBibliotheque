@@ -8,6 +8,7 @@
 #ifndef ADHERENT_H_
 #define ADHERENT_H_
 #include "bibliotheque.h"
+#include "listeNoeudlivre.h"
 
 class Adherent{
 private:
@@ -17,11 +18,11 @@ private:
 	string adresse;
 	string numAdherent;
 	int nbrEmpruntAuto;
-	Livre listeEmprunt[10];
+	ListeNoeudlivre listeEmprunt;
 public:
 	Adherent(string, string, Bibliotheque, string, string);
 	void empruntLivre(string);
-	void rendreLivre(Livre);
+	void rendreLivre(Livre*);
 
 };
 

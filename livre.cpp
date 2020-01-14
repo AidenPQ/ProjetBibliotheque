@@ -16,6 +16,7 @@ Livre::Livre(){
 	code_livre = "";
 	publique = "";
 	etatEmprunt = false;
+	categorie = "livre";
 }
 
 Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
@@ -25,6 +26,7 @@ Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
 	publique = pub;
 	code_livre = cdl;
 	etatEmprunt = false;
+	categorie = "livre";
 }
 
 Livre::Livre(const Livre &l){
@@ -34,6 +36,10 @@ Livre::Livre(const Livre &l){
 	publique = l.getPublique();
 	code_livre = l.getCode_livre();
 	etatEmprunt = false;
+	categorie = "roman";
+}
+
+Livre::~Livre(){
 
 }
 
@@ -87,6 +93,10 @@ string Livre::getCode_livre() const{
 
 bool Livre::getEtatEmprunt() const{
 	return etatEmprunt;
+}
+
+string Livre::getCategorie() const{
+	return categorie;
 }
 
 

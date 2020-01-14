@@ -10,6 +10,7 @@ using namespace std;
 
 BandeDessinee::BandeDessinee(string aut, string tit, string isbn, string pub, string type, string cdl):Livre(aut, tit, isbn,pub,cdl){
 	this->dessinateur=type;
+	this->categorie = "bandeDessinee";
 
 }
 string BandeDessinee::getDessinateur()const{
@@ -19,6 +20,7 @@ string BandeDessinee::getDessinateur()const{
 
 BandeDessinee::BandeDessinee(const BandeDessinee &rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
 	dessinateur= rom.getDessinateur();
+	this->categorie = "bandeDessinee";
 }
 
 void BandeDessinee::affiche(){

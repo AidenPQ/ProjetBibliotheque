@@ -11,6 +11,7 @@ using namespace std;
 
 Album::Album(string aut, string tit, string isbn, string pub, string cdl, string type):Livre(aut, tit, isbn,pub,cdl){
 	this->typeIllustration=type;
+	this->categorie = "album";
 
 }
 string Album::getType()const{
@@ -20,6 +21,7 @@ string Album::getType()const{
 
 Album::Album(const Album &rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
 	typeIllustration= rom.getType();
+	this->categorie = "album";
 }
 
 void Album::affiche(){

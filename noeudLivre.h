@@ -11,14 +11,14 @@
 
 class Noeudlivre{
 private:
-	Livre lvr;
+	Livre* lvr;
 	Noeudlivre *suivant;
 
 public:
-	Noeudlivre(Livre lv);
-	Noeudlivre(Livre lv, Noeudlivre* sv);
+	Noeudlivre(Livre* lv);
+	Noeudlivre(Livre* lv, Noeudlivre* sv);
 
-	Livre getLivre() const;
+	Livre* getLivre() const;
 	Noeudlivre* getSuivant();
 
 	void setSuivant(Noeudlivre* sv);

@@ -17,9 +17,12 @@ private:
 public:
 	ListeNoeudlivre();
 
-	void ajoute(Livre);
-	void enleve(Livre);
-	Livre recherche(string) throw(int);
+	void ajoute(Livre*);
+	void enleve(Livre*);
+	Livre* recherche(string) throw(int);
+	Livre* rechercheISBN(string) throw(int);
+
+	void afficheCategorie(string categorie);
 	void affiche();
 
 
