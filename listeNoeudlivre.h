@@ -1,14 +1,14 @@
 /*
  * listeNoeudlivre.h
  *
- *  Created on: 28 déc. 2019
+ *  Created on: 28 dï¿½c. 2019
  *      Author: ngand
  */
 
 #ifndef LISTENOEUDLIVRE_H_
 #define LISTENOEUDLIVRE_H_
 
-#include "noeudlivre.h"
+#include "noeudLivre.h"
 
 class ListeNoeudlivre{
 private:

@@ -19,6 +19,7 @@ public:
 	Roman(const Roman&);
 	void affiche();
 	string getGenre() const;
+	friend ostream& operator<<(ostream& out, Roman R);
 
 };
 

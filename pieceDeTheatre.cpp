@@ -29,6 +29,10 @@ void PieceDeTheatre::affiche(){
 	cout<<"Siecle:"<<siecle<<endl;
 }
 
+ostream& operator<<(ostream& out, PieceDeTheatre A){
+	out<< "Titre: " << A.titre << endl<< "Auteur: " << A.auteur << endl<< "ISBN: " << A.ISBN << endl<< "Public vise: " << A.publique << endl<< "Code du Livre: " << A.code_livre << endl<< "Emprunte : " << A.etatEmprunt << endl<<"Siecle:"<<A.siecle<<endl;
+		return out;
+}
 
 
 
