@@ -33,7 +33,7 @@ void ListeNoeudlivre::enleve(Livre* l){
 	}
 }
 
-Livre* ListeNoeudlivre::recherche(string code) throw(int)
+Livre* ListeNoeudlivre::recherche(string code)
 {
 	for(Noeudlivre *courant = premier; courant != NULL ; courant = courant->getSuivant()){
 		if(courant->getLivre()->getCode_livre() == code){
@@ -41,7 +41,7 @@ Livre* ListeNoeudlivre::recherche(string code) throw(int)
 		}
 	}
 	cout << "Livre Non existant" << endl;
-	throw 0;
+	return NULL;
 }
 
 void ListeNoeudlivre::afficheCategorie(string categorie){
@@ -54,7 +54,7 @@ void ListeNoeudlivre::afficheCategorie(string categorie){
 	}
 }
 
-Livre* ListeNoeudlivre::rechercheISBN(string isbn) throw(int)
+Livre* ListeNoeudlivre::rechercheISBN(string isbn)
 {
 	for(Noeudlivre *courant = premier; courant != NULL ; courant = courant->getSuivant()){
 		if(courant->getLivre()->getISBN() == isbn){
@@ -62,7 +62,7 @@ Livre* ListeNoeudlivre::rechercheISBN(string isbn) throw(int)
 		}
 	}
 	cout << "Livre Non existant" << endl;
-	throw 0;
+	return NULL;
 }
 
 

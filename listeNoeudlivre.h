@@ -19,8 +19,8 @@ public:
 
 	void ajoute(Livre*);
 	void enleve(Livre*);
-	Livre* recherche(string) throw(int);
-	Livre* rechercheISBN(string) throw(int);
+	Livre* recherche(string);
+	Livre* rechercheISBN(string);
 
 	void afficheCategorie(string categorie);
 	void affiche();

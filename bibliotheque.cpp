@@ -21,9 +21,7 @@ Bibliotheque::Bibliotheque(string name, string address, string cd_biblio) : list
 	adresse = address;
 	code_biblio = cd_biblio;
 	nbre_livres = 0;
-	nbre_echanges = 0;
-	taille_tabEchange = 10;
-	listeEchange = new Echange*[10];
+	code_livres = 0;
 }
 
 Bibliotheque::Bibliotheque() : listeLivres()
@@ -32,17 +30,14 @@ Bibliotheque::Bibliotheque() : listeLivres()
 	adresse = "";
 	code_biblio = "";
 	nbre_livres = 0;
-	nbre_echanges = 0;
-	taille_tabEchange = 10;
-	listeEchange = new Echange*[10];
+	code_livres = 0;
 }
 
 void Bibliotheque::achatLivre(Livre* livre)
 {
-	nbre_livres++;
-	int k = 1;
+	code_livres++;
 	stringstream ss;
-	ss<<k;
+	ss<<code_livres;
 	string s;
 	ss>>s;
 	string code = code_biblio + s;
@@ -61,7 +56,7 @@ void Bibliotheque::affiche()
 }
 
 void Bibliotheque::afficheParCategorie(string cat){
-	cout << "Nom de la bibliotheque: " << nom << endl;
+		cout << "Nom de la bibliotheque: " << nom << endl;
 		cout << "Adresse: " << adresse << endl;
 		cout << "Code de la bibliotheque: " << code_biblio << endl;
 		cout << "" << endl;
@@ -70,7 +65,7 @@ void Bibliotheque::afficheParCategorie(string cat){
 
 }
 
-void Bibliotheque::demandeLivre(Bibliotheque biblio, string isbn){
+void Bibliotheque::demandeLivre(Bibliotheque* biblio, string isbn){
 
 
 }
@@ -87,12 +82,10 @@ void Bibliotheque::supprimLivre(Livre* livre){
 
 }
 
-void Bibliotheque::doubleTableau(Echange** ech, int size){
-	int newsize = size*2;
-	Echange** tab1 = new Echange*[newsize];
-	for(int i = 0; i < size; i++){
-		tab1[i] = ech[i];
-	}
-	ech = tab1;
-	size = newsize;
+bool operator==(Bibliotheque &B1,Bibliotheque &B2){
+	if((B1.nom == B2.nom)&&(B1.adresse == B2.adresse)&&(B1.code_biblio == B2.code_biblio)){
+			return true;
+		}
+		return false;
 }
+
