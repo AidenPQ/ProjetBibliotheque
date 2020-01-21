@@ -17,6 +17,8 @@ Livre::Livre(){
 	publique = "";
 	etatEmprunt = false;
 	categorie = "livre";
+	code_biblioOriginel = "";
+	code_biblioActuel = "";
 }
 
 Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
@@ -27,6 +29,9 @@ Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
 	code_livre = cdl;
 	etatEmprunt = false;
 	categorie = "livre";
+	code_biblioOriginel = "";
+	code_biblioActuel = "";
+
 }
 
 Livre::Livre(const Livre &l){
@@ -37,6 +42,8 @@ Livre::Livre(const Livre &l){
 	code_livre = l.getCode_livre();
 	etatEmprunt = false;
 	categorie = "roman";
+	code_biblioOriginel = "";
+	code_biblioActuel = "";
 }
 
 Livre::~Livre(){
@@ -61,9 +68,9 @@ ostream& operator<<(ostream& out, Livre A){
 
 
 
-bool Livre::Equals(Livre l)
+bool Livre::Equals(Livre* l)
 {
-	if((auteur == l.getAuteur())&&(titre == l.getTitre())&&(ISBN == l.getISBN())&&(code_livre == l.getCode_livre())&&(publique == l.getPublique())){
+	if((auteur == l->getAuteur())&&(titre == l->getTitre())&&(ISBN == l->getISBN())&&(code_livre == l->getCode_livre())&&(publique == l->getPublique())){
 		return true;
 	}
 	return false;

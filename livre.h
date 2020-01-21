@@ -9,6 +9,7 @@
 #define LIVRE_H_
 
 
+
 #include <iostream>
 using namespace std;
 
@@ -22,6 +23,8 @@ protected:
 	string publique;
 	bool etatEmprunt;
 	string categorie;
+	string code_biblioOriginel;
+	string code_biblioActuel;
 
 public:
 	Livre();
@@ -36,12 +39,16 @@ public:
 	string getISBN() const;
 	bool getEtatEmprunt() const;
 	string getCategorie() const;
+	//Bibliotheque* getBiblioOriginel();
+	//Bibliotheque* getBiblioActuel();
 
 	void setEtatEmprunt(bool);
 	void setCode_Livre(string);
+	//void setBiblioOriginel(Bibliotheque*);
+	//void setBiblioOriginel();
 
-	void affiche();
-	bool Equals(Livre);
+	virtual void affiche();
+	bool Equals(Livre*);
 
 	friend ostream& operator<<(ostream& out, Livre L);
 
