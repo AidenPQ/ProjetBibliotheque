@@ -40,8 +40,8 @@ public:
 	void setEtatEmprunt(bool);
 	void setCode_Livre(string);
 
-	void affiche();
-	bool Equals(Livre);
+	virtual void affiche() =0;
+	bool Equals(Livre*);
 	friend ostream& operator<<(ostream& out, Livre &L);
 
 };

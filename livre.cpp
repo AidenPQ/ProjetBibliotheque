@@ -61,9 +61,9 @@ ostream& operator<<(ostream& out, Livre &A){
 
 
 
-bool Livre::Equals(Livre l)
+bool Livre::Equals(Livre* l)
 {
-	if((auteur == l.getAuteur())&&(titre == l.getTitre())&&(ISBN == l.getISBN())&&(code_livre == l.getCode_livre())&&(publique == l.getPublique())){
+	if((auteur == l->getAuteur())&&(titre == l->getTitre())&&(ISBN == l->getISBN())&&(code_livre == l->getCode_livre())&&(publique == l->getPublique())){
 		return true;
 	}
 	return false;

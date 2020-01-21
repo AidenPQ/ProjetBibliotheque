@@ -9,7 +9,7 @@
 using namespace std;
 #include "album.h"
 
-Album::Album(string aut, string tit, string isbn, string pub, string cdl, string type):Livre(aut, tit, isbn,pub,cdl){
+Album::Album(string aut, string tit, string isbn, string pub, string type, string cdl):Livre(aut, tit, isbn,pub,cdl){
 	this->typeIllustration=type;
 	this->categorie = "album";
 

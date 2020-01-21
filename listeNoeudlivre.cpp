@@ -1,7 +1,7 @@
 /*
  * listeNoeudlivre.cpp
  *
- *  Created on: 28 déc. 2019
+ *  Created on: 28 dï¿½c. 2019
  *      Author: ngand
  */
 
@@ -19,13 +19,13 @@ void ListeNoeudlivre::ajoute(Livre* l){
 }
 
 void ListeNoeudlivre::enleve(Livre* l){
-	if(l->Equals(*premier->getLivre())){
+	if(l->Equals(premier->getLivre())){
 		Noeudlivre* s = premier->getSuivant();
 		delete(premier);
 		premier = s;
 	}
 	for(Noeudlivre *courant = premier; courant->getSuivant() != NULL ; courant = courant->getSuivant()){
-		if(l->Equals(*courant->getSuivant()->getLivre())){
+		if(l->Equals(courant->getSuivant()->getLivre())){
 			Noeudlivre *s = courant->getSuivant()->getSuivant();
 			courant->setSuivant(s);
 			break;
@@ -72,6 +72,15 @@ void ListeNoeudlivre::affiche(){
 		cout << "" << endl;
 	}
 }
+
+ostream& operator<<(ostream& out, ListeNoeudlivre &N){
+	for(Noeudlivre *courant = N.premier; courant != NULL; courant = courant->getSuivant()){
+			courant->getLivre()->affiche();
+			out<< "truc" << endl;
+		}
+	return out;
+}
+
 
 Noeudlivre* ListeNoeudlivre::getPremier(){
 	return premier;
