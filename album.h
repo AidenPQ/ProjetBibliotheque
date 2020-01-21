@@ -19,6 +19,7 @@ public:
 	Album (const Album&);
 	void affiche();
 	string getType() const;
+
 	friend ostream& operator<<(ostream& out, Album A);
 };
 

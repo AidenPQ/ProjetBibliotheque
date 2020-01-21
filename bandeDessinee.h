@@ -19,6 +19,7 @@ public:
 	BandeDessinee (const BandeDessinee&);
 	void affiche();
 	string getDessinateur() const;
+
 	friend ostream& operator<<(ostream& out, BandeDessinee &BD);
 };
 

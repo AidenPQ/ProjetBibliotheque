@@ -33,3 +33,4 @@ ostream& operator<<(ostream& out, Album A){
 	out<< "Titre: " << A.titre << endl<< "Auteur: " << A.auteur << endl<< "ISBN: " << A.ISBN << endl<< "Public vise: " << A.publique << endl<< "Code du Livre: " << A.code_livre << endl<< "Emprunte : " << A.etatEmprunt << endl<<"Type d'illustration:"<<A.typeIllustration<<endl;
 	return out;
 }
+
