@@ -1,7 +1,7 @@
 /*
  * bibliotheque.h
  *
- *  Created on: 30 déc. 2019
+ *  Created on: 30 dï¿½c. 2019
  *      Author: ngand
  */
 
@@ -38,6 +38,7 @@ public:
 	ListeNoeudlivre* getListeLivres();
 
 	friend bool operator==(Bibliotheque&,Bibliotheque&);
+	friend ostream& operator<<(ostream& out, Bibliotheque &B);
 };
 
 
