@@ -30,7 +30,8 @@ string Roman::getGenre() const{
 	return genre;
 }
 
-ostream& operator<<(ostream& out, Roman A){
+ostream& operator<<(ostream& out, Roman &A){
+
 	out<< "Titre: " << A.titre << endl<< "Auteur: " << A.auteur << endl<< "ISBN: " << A.ISBN << endl<< "Public vise: " << A.publique << endl<< "Code du Livre: " << A.code_livre << endl<< "Emprunte : " << A.etatEmprunt << endl<<"Genre:"<<A.genre<<endl;
 		return out;
 }

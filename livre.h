@@ -43,6 +43,7 @@ public:
 	void affiche();
 	bool Equals(Livre);
 
+	friend ostream& operator<<(ostream& out, Livre L);
 
 };
 

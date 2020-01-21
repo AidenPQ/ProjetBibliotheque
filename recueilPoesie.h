@@ -19,7 +19,7 @@ public:
 	RecueilPoesie(const RecueilPoesie&);
 	void affiche();
 	string getFormat()const;
-	friend ostream& operator<<(ostream& out, RecueilPoesie P);
+	friend ostream& operator<<(ostream& out, RecueilPoesie &P);
 
 };
 

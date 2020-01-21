@@ -19,7 +19,7 @@ public:
 	PieceDeTheatre(const PieceDeTheatre&);
 	void affiche();
 	string getSiecle() const;
-	friend ostream& operator<<(ostream& out, PieceDeTheatre P);
+	friend ostream& operator<<(ostream& out, PieceDeTheatre &P);
 
 };
 
