@@ -22,7 +22,7 @@ Adherent::Adherent(string name, string surname, Bibliotheque biblio, string adr,
 void Adherent::empruntLivre(string code){
 	if(nbrEmpruntAuto>0){
 		Livre* emprunt = NULL;
-		emprunt = biblioInscrit.getListeLivres().recherche(code);
+		emprunt = biblioInscrit.getListeLivres()->recherche(code);
 		if (!emprunt->getEtatEmprunt())
 		{
 			emprunt->setEtatEmprunt(true);

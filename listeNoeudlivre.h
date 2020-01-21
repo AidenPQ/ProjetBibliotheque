@@ -12,7 +12,7 @@
 
 class ListeNoeudlivre{
 private:
-	Noeudlivre *premier;
+	Noeudlivre* premier;
 
 public:
 	ListeNoeudlivre();

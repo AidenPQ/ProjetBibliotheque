@@ -22,6 +22,9 @@ Bibliotheque::Bibliotheque(string name, string address, string cd_biblio) : list
 	code_biblio = cd_biblio;
 	nbre_livres = 0;
 	code_livres = 0;
+	nbre_tailleListeBibliothequesPret = 10;
+	nbre_bibliothequePret = 0;
+	ListeBibliothequesPret = new Bibliotheque*[nbre_tailleListeBibliothequesPret];
 }
 
 Bibliotheque::Bibliotheque() : listeLivres()
@@ -31,6 +34,10 @@ Bibliotheque::Bibliotheque() : listeLivres()
 	code_biblio = "";
 	nbre_livres = 0;
 	code_livres = 0;
+	nbre_tailleListeBibliothequesPret = 10;
+	nbre_bibliothequePret = 0;
+	ListeBibliothequesPret = new Bibliotheque*[nbre_tailleListeBibliothequesPret];
+
 }
 
 void Bibliotheque::achatLivre(Livre* livre)
@@ -42,7 +49,7 @@ void Bibliotheque::achatLivre(Livre* livre)
 	ss>>s;
 	string code = code_biblio + s;
 	livre->setCode_Livre(code);
-	listeLivres.ajoute(livre);
+	listeLivres->ajoute(livre);
 }
 
 void Bibliotheque::affiche()
@@ -52,7 +59,7 @@ void Bibliotheque::affiche()
 	cout << "Code de la bibliotheque: " << code_biblio << endl;
 	cout << "" << endl;
 	cout << "Livres de la Bibliotheque: " << endl;
-	listeLivres.affiche();
+	listeLivres->affiche();
 }
 
 void Bibliotheque::afficheParCategorie(string cat){
@@ -61,7 +68,7 @@ void Bibliotheque::afficheParCategorie(string cat){
 		cout << "Code de la bibliotheque: " << code_biblio << endl;
 		cout << "" << endl;
 		cout << cat <<"s de la Bibliotheque: " << endl;
-		listeLivres.afficheCategorie(cat);
+		listeLivres->afficheCategorie(cat);
 
 }
 
@@ -70,7 +77,7 @@ void Bibliotheque::demandeLivre(Bibliotheque* biblio, string isbn){
 
 }
 
-ListeNoeudlivre Bibliotheque::getListeLivres(){
+ListeNoeudlivre* Bibliotheque::getListeLivres(){
 	return listeLivres;
 }
 

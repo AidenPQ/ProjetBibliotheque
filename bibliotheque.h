@@ -9,13 +9,15 @@
 #define BIBLIOTHEQUE_H_
 #include "listeNoeudlivre.h"
 
-
 class Bibliotheque{
 private:
 	string nom;
 	string adresse;
 	string code_biblio;
-	ListeNoeudlivre listeLivres;
+	ListeNoeudlivre* listeLivres;
+	Bibliotheque** ListeBibliothequesPret;
+	int nbre_bibliothequePret;
+	int nbre_tailleListeBibliothequesPret;
 	int nbre_livres;
 	int code_livres;
 
@@ -33,7 +35,7 @@ public:
 
 	void rendreLivres();
 
-	ListeNoeudlivre getListeLivres();
+	ListeNoeudlivre* getListeLivres();
 
 	friend bool operator==(Bibliotheque&,Bibliotheque&);
 };

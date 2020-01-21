@@ -9,6 +9,7 @@
 #define NOEUDLIVRE_H_
 #include "livre.h"
 
+class Livre;
 class Noeudlivre{
 private:
 	Livre* lvr;

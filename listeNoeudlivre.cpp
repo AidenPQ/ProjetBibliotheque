@@ -19,13 +19,13 @@ void ListeNoeudlivre::ajoute(Livre* l){
 }
 
 void ListeNoeudlivre::enleve(Livre* l){
-	if(l->Equals(*premier->getLivre())){
+	if(l->Equals(premier->getLivre())){
 		Noeudlivre* s = premier->getSuivant();
 		delete(premier);
 		premier = s;
 	}
 	for(Noeudlivre *courant = premier; courant->getSuivant() != NULL ; courant = courant->getSuivant()){
-		if(l->Equals(*courant->getSuivant()->getLivre())){
+		if(l->Equals(courant->getSuivant()->getLivre())){
 			Noeudlivre *s = courant->getSuivant()->getSuivant();
 			courant->setSuivant(s);
 			break;
