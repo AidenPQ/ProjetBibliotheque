@@ -1,7 +1,7 @@
 /*
  * livre.h
  *
- *  Created on: 28 déc. 2019
+ *  Created on: 28 dï¿½c. 2019
  *      Author: ngand
  */
 
@@ -40,8 +40,10 @@ public:
 	void setEtatEmprunt(bool);
 	void setCode_Livre(string);
 
-	virtual void affiche();
+	void affiche();
 	bool Equals(Livre);
+
+	friend ostream& operator<<(ostream& out, Livre L);
 
 };
 

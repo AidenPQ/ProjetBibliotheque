@@ -5,18 +5,16 @@
  *      Author: ngand
  */
 
+
 #include "echange.h"
 
-Echange::Echange(Bibliotheque* biblprt, Bibliotheque* biblemp, Livre* lv){
-	BiblioPreteuse = biblprt;
-	BiblioEmprunteuse = biblemp;
+#include <iostream>
+using namespace std;
+
+template < class T, class U>
+
+Echange<T,U>::Echange(T* biblioprt, U* lv){
+	BiblioPreteuse = biblioprt;
 	livreEchangee = lv;
 }
 
-Echange::~Echange(){
-
-}
-
-void Echange::rendrelivre() {
-
-}

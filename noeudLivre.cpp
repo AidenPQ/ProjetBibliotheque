@@ -1,12 +1,12 @@
 /*
  * noeudlivre.cpp
  *
- *  Created on: 28 déc. 2019
+ *  Created on: 28 dï¿½c. 2019
  *      Author: ngand
  */
 
 
-#include "noeudlivre.h"
+#include "noeudLivre.h"
 
 Noeudlivre::Noeudlivre(Livre* lv){
 	lvr = lv;

@@ -7,18 +7,19 @@
 
 #ifndef ECHANGE_H_
 #define ECHANGE_H_
-#include "bibliotheque.h"
-class Bibliotheque;
+
+#include <iostream>
+using namespace std;
+
+template < class T, class U>
+
 class Echange{
 private:
-	Bibliotheque* BiblioPreteuse;
-	Bibliotheque* BiblioEmprunteuse;
-	Livre* livreEchangee;
+	T* BiblioPreteuse;
+	U* livreEchangee;
 
 public:
-	Echange(Bibliotheque* bib, Bibliotheque* bibe, Livre* l);
-	~Echange();
-	void rendrelivre();
+	Echange(T* bib, U* l);
 };
 
 

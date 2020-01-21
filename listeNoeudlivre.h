@@ -1,14 +1,14 @@
 /*
  * listeNoeudlivre.h
  *
- *  Created on: 28 déc. 2019
+ *  Created on: 28 dï¿½c. 2019
  *      Author: ngand
  */
 
 #ifndef LISTENOEUDLIVRE_H_
 #define LISTENOEUDLIVRE_H_
 
-#include "noeudlivre.h"
+#include "noeudLivre.h"
 
 class ListeNoeudlivre{
 private:
@@ -19,8 +19,8 @@ public:
 
 	void ajoute(Livre*);
 	void enleve(Livre*);
-	Livre* recherche(string) throw(int);
-	Livre* rechercheISBN(string) throw(int);
+	Livre* recherche(string);
+	Livre* rechercheISBN(string);
 
 	void afficheCategorie(string categorie);
 	void affiche();

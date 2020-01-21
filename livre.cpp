@@ -1,7 +1,7 @@
 /*
  * livre.cpp
  *
- *  Created on: 28 déc. 2019
+ *  Created on: 28 dï¿½c. 2019
  *      Author: ngand
  */
 
@@ -48,10 +48,18 @@ void Livre::affiche(){
 	cout << "Titre: " << titre << endl;
 	cout << "Auteur: " << auteur << endl;
 	cout << "ISBN: " << ISBN << endl;
-	cout << "Public visee: " << publique << endl;
+	cout << "Public vise: " << publique << endl;
 	cout << "Code du Livre: " << code_livre << endl;
 	cout << "Emprunte : " << etatEmprunt << endl;
 }
+
+ostream& operator<<(ostream& out, Livre A){
+	out<<"Titre: " << A.titre << endl<< "Auteur: " << A.auteur << endl<< "ISBN: " << A.ISBN << endl<< "Public vise: " << A.publique << endl<< "Code du Livre: " << A.code_livre << endl<< "Emprunte : " << A.etatEmprunt << endl;
+	return out;
+}
+
+
+
 
 bool Livre::Equals(Livre l)
 {

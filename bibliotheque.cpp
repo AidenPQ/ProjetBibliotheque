@@ -11,6 +11,7 @@
 #include "pieceDeTheatre.h"
 #include "recueilPoesie.h"
 #include "roman.h"
+#include "echange.h"
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -23,7 +24,7 @@ Bibliotheque::Bibliotheque(string name, string address, string cd_biblio) : list
 	nbre_livres = 0;
 	nbre_echanges = 0;
 	taille_tabEchange = 10;
-	listeEchange = new Echange*[10];
+	code_livres = 0;
 }
 
 Bibliotheque::Bibliotheque() : listeLivres()
@@ -34,15 +35,14 @@ Bibliotheque::Bibliotheque() : listeLivres()
 	nbre_livres = 0;
 	nbre_echanges = 0;
 	taille_tabEchange = 10;
-	listeEchange = new Echange*[10];
+	code_livres = 0;
 }
 
 void Bibliotheque::achatLivre(Livre* livre)
 {
-	nbre_livres++;
-	int k = 1;
+	code_livres++;
 	stringstream ss;
-	ss<<k;
+	ss<<code_livres;
 	string s;
 	ss>>s;
 	string code = code_biblio + s;
@@ -61,7 +61,7 @@ void Bibliotheque::affiche()
 }
 
 void Bibliotheque::afficheParCategorie(string cat){
-	cout << "Nom de la bibliotheque: " << nom << endl;
+		cout << "Nom de la bibliotheque: " << nom << endl;
 		cout << "Adresse: " << adresse << endl;
 		cout << "Code de la bibliotheque: " << code_biblio << endl;
 		cout << "" << endl;
@@ -70,7 +70,7 @@ void Bibliotheque::afficheParCategorie(string cat){
 
 }
 
-void Bibliotheque::demandeLivre(Bibliotheque biblio, string isbn){
+void Bibliotheque::demandeLivre(Bibliotheque* biblio, string isbn){
 
 
 }
@@ -87,12 +87,4 @@ void Bibliotheque::supprimLivre(Livre* livre){
 
 }
 
-void Bibliotheque::doubleTableau(Echange** ech, int size){
-	int newsize = size*2;
-	Echange** tab1 = new Echange*[newsize];
-	for(int i = 0; i < size; i++){
-		tab1[i] = ech[i];
-	}
-	ech = tab1;
-	size = newsize;
-}
+
