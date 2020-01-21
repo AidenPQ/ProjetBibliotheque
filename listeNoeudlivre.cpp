@@ -1,7 +1,7 @@
 /*
  * listeNoeudlivre.cpp
  *
- *  Created on: 28 déc. 2019
+ *  Created on: 28 dï¿½c. 2019
  *      Author: ngand
  */
 
@@ -72,6 +72,15 @@ void ListeNoeudlivre::affiche(){
 		cout << "" << endl;
 	}
 }
+
+ostream& operator<<(ostream& out, ListeNoeudlivre &N){
+	for(Noeudlivre *courant = N.premier; courant != NULL; courant = courant->getSuivant()){
+			courant->getLivre()->affiche();
+			out<< "truc" << endl;
+		}
+	return out;
+}
+
 
 Noeudlivre* ListeNoeudlivre::getPremier(){
 	return premier;

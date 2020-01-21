@@ -60,7 +60,7 @@ void Livre::affiche(){
 	cout << "Emprunte : " << etatEmprunt << endl;
 }
 
-ostream& operator<<(ostream& out, Livre A){
+ostream& operator<<(ostream& out, Livre &A){
 	out<<"Titre: " << A.titre << endl<< "Auteur: " << A.auteur << endl<< "ISBN: " << A.ISBN << endl<< "Public vise: " << A.publique << endl<< "Code du Livre: " << A.code_livre << endl<< "Emprunte : " << A.etatEmprunt << endl;
 	return out;
 }
@@ -75,6 +75,7 @@ bool Livre::Equals(Livre* l)
 	}
 	return false;
 }
+
 
 void Livre::setCode_Livre(string cdl){
 	code_livre = cdl;

@@ -9,7 +9,7 @@
 using namespace std;
 #include "album.h"
 
-Album::Album(string aut, string tit, string isbn, string pub, string cdl, string type):Livre(aut, tit, isbn,pub,cdl){
+Album::Album(string aut, string tit, string isbn, string pub, string type, string cdl):Livre(aut, tit, isbn,pub,cdl){
 	this->typeIllustration=type;
 	this->categorie = "album";
 
@@ -33,3 +33,4 @@ ostream& operator<<(ostream& out, Album A){
 	out<< "Titre: " << A.titre << endl<< "Auteur: " << A.auteur << endl<< "ISBN: " << A.ISBN << endl<< "Public vise: " << A.publique << endl<< "Code du Livre: " << A.code_livre << endl<< "Emprunte : " << A.etatEmprunt << endl<<"Type d'illustration:"<<A.typeIllustration<<endl;
 	return out;
 }
+
