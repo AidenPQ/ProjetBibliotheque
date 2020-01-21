@@ -8,7 +8,7 @@
 #ifndef BIBLIOTHEQUE_H_
 #define BIBLIOTHEQUE_H_
 #include "listeNoeudlivre.h"
-#include "echange.h"
+
 
 class Bibliotheque{
 private:
@@ -16,8 +16,6 @@ private:
 	string adresse;
 	string code_biblio;
 	ListeNoeudlivre listeLivres;
-	int nbre_echanges;
-	int taille_tabEchange;
 	int nbre_livres;
 	int code_livres;
 
@@ -36,6 +34,8 @@ public:
 	void rendreLivres();
 
 	ListeNoeudlivre getListeLivres();
+
+	friend bool operator==(Bibliotheque&,Bibliotheque&);
 };
 
 

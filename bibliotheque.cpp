@@ -11,7 +11,6 @@
 #include "pieceDeTheatre.h"
 #include "recueilPoesie.h"
 #include "roman.h"
-#include "echange.h"
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -22,8 +21,6 @@ Bibliotheque::Bibliotheque(string name, string address, string cd_biblio) : list
 	adresse = address;
 	code_biblio = cd_biblio;
 	nbre_livres = 0;
-	nbre_echanges = 0;
-	taille_tabEchange = 10;
 	code_livres = 0;
 }
 
@@ -33,8 +30,6 @@ Bibliotheque::Bibliotheque() : listeLivres()
 	adresse = "";
 	code_biblio = "";
 	nbre_livres = 0;
-	nbre_echanges = 0;
-	taille_tabEchange = 10;
 	code_livres = 0;
 }
 
@@ -87,4 +82,10 @@ void Bibliotheque::supprimLivre(Livre* livre){
 
 }
 
+bool operator==(Bibliotheque &B1,Bibliotheque &B2){
+	if((B1.nom == B2.nom)&&(B1.adresse == B2.adresse)&&(B1.code_biblio == B2.code_biblio)){
+			return true;
+		}
+		return false;
+}
 
