@@ -127,6 +127,10 @@ string Livre::getCode_biblioActuel() const{
 	return code_biblioActuel;
 }
 
+ostream& operator<<(ostream& out, Livre &L){
+	return out;
+}
+
 
 
 

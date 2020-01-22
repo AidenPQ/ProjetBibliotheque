@@ -14,7 +14,7 @@ private:
 	string nom;
 	string adresse;
 	string code_biblio;
-	ListeNoeudlivre listeLivres;
+
 
 	int nbre_bibliothequePret;
 	int nbre_tailleListeBibliothequesPret;
@@ -22,6 +22,7 @@ private:
 	int code_livres;
 
 public:
+	ListeNoeudlivre listeLivres;
 	Bibliotheque(string,string,string);
 	Bibliotheque();
 	void affiche();
@@ -37,6 +38,8 @@ public:
 	void doubleTableau();
 
 	ListeNoeudlivre getListeLivres();
+	string getCode_biblio() const;
+	void setListelivres(ListeNoeudlivre&);
 
 	friend bool operator==(Bibliotheque&,Bibliotheque&);
 	friend ostream& operator<<(ostream& out, Bibliotheque &B);
