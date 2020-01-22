@@ -15,7 +15,7 @@ private:
 	string adresse;
 	string code_biblio;
 	ListeNoeudlivre listeLivres;
-	Bibliotheque** ListeBibliothequesPret;
+
 	int nbre_bibliothequePret;
 	int nbre_tailleListeBibliothequesPret;
 	int nbre_livres;
@@ -26,7 +26,7 @@ public:
 	Bibliotheque();
 	void affiche();
 	void afficheParCategorie(string);
-
+	Bibliotheque** ListeBibliothequesPret;
 	void demandeLivre(Bibliotheque*,string);
 
 	void achatLivre(Livre*);
@@ -34,6 +34,7 @@ public:
 	void supprimLivre(Livre*);
 
 	void rendreLivres();
+	void doubleTableau();
 
 	ListeNoeudlivre getListeLivres();
 
