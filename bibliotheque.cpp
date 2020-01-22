@@ -63,7 +63,7 @@ void Bibliotheque::affiche()
 }
 
 ostream& operator<<(ostream& out, Bibliotheque &B){
-	out<<"Nom de la bibliotheque: " << B.nom << endl<<"Adresse: " << B.adresse << endl<<"Code de la bibliotheque: " << B.code_biblio << endl<<"" << endl;//<<"Livres de la Bibliotheque: " << endl<<*(B.listeLivres)<<endl;
+	out<<"Nom de la bibliotheque: " << B.nom << endl<<"Adresse: " << B.adresse << endl<<"Code de la bibliotheque: " << B.code_biblio << endl<<"" << endl<<"Livres de la Bibliotheque: " << endl<<B.listeLivres<<endl;
 	return out;
 }
 void Bibliotheque::afficheParCategorie(string cat){

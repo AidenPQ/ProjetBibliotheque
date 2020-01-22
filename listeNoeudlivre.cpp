@@ -73,6 +73,16 @@ void ListeNoeudlivre::affiche(){
 	}
 }
 
+ostream& operator<<(ostream& out, ListeNoeudlivre &l){
+	for(Noeudlivre *courant = l.premier; courant != NULL; courant = courant->getSuivant()){
+			courant->getLivre()->affiche();
+			out << "" << endl;
+		}
+	return out;
+}
+
+
+
 
 Noeudlivre* ListeNoeudlivre::getPremier(){
 	return premier;

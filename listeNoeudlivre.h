@@ -25,6 +25,7 @@ public:
 	void afficheCategorie(string categorie);
 	void affiche();
 
+	friend ostream& operator<<(ostream& out, ListeNoeudlivre &l);
 
 	Noeudlivre* getPremier();
 	void setPremier(Noeudlivre*);
