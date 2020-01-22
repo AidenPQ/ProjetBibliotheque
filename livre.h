@@ -47,15 +47,8 @@ public:
 	//void setBiblioOriginel(Bibliotheque*);
 	//void setBiblioOriginel();
 
-
 	virtual void affiche();
 	bool Equals(Livre*);
-
-	friend ostream& operator<<(ostream& out, Livre L);
-
-	virtual void affiche() =0;
-	bool Equals(Livre*);
-	friend ostream& operator<<(ostream& out, Livre &L);
 
 
 };

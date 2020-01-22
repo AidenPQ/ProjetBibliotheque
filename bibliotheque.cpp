@@ -49,7 +49,7 @@ void Bibliotheque::achatLivre(Livre* livre)
 	ss>>s;
 	string code = code_biblio + s;
 	livre->setCode_Livre(code);
-	listeLivres->ajoute(livre);
+	listeLivres.ajoute(livre);
 }
 
 void Bibliotheque::affiche()
@@ -59,7 +59,7 @@ void Bibliotheque::affiche()
 	cout << "Code de la bibliotheque: " << code_biblio << endl;
 	cout << "" << endl;
 	cout << "Livres de la Bibliotheque: " << endl;
-	listeLivres->affiche();
+	listeLivres.affiche();
 }
 
 void Bibliotheque::afficheParCategorie(string cat){
@@ -68,7 +68,7 @@ void Bibliotheque::afficheParCategorie(string cat){
 		cout << "Code de la bibliotheque: " << code_biblio << endl;
 		cout << "" << endl;
 		cout << cat <<"s de la Bibliotheque: " << endl;
-		listeLivres->afficheCategorie(cat);
+		listeLivres.afficheCategorie(cat);
 
 }
 
@@ -77,7 +77,7 @@ void Bibliotheque::demandeLivre(Bibliotheque* biblio, string isbn){
 
 }
 
-ListeNoeudlivre* Bibliotheque::getListeLivres(){
+ListeNoeudlivre Bibliotheque::getListeLivres(){
 	return listeLivres;
 }
 

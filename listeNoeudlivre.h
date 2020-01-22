@@ -24,7 +24,6 @@ public:
 
 	void afficheCategorie(string categorie);
 	void affiche();
-	friend ostream& operator<<(ostream& out, ListeNoeudlivre &N);
 
 
 	Noeudlivre* getPremier();

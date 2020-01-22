@@ -14,7 +14,7 @@ private:
 	string nom;
 	string adresse;
 	string code_biblio;
-	ListeNoeudlivre* listeLivres;
+	ListeNoeudlivre listeLivres;
 	Bibliotheque** ListeBibliothequesPret;
 	int nbre_bibliothequePret;
 	int nbre_tailleListeBibliothequesPret;
@@ -35,7 +35,7 @@ public:
 
 	void rendreLivres();
 
-	ListeNoeudlivre* getListeLivres();
+	ListeNoeudlivre getListeLivres();
 
 	friend bool operator==(Bibliotheque&,Bibliotheque&);
 };
