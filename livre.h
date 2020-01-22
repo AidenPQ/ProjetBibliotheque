@@ -39,16 +39,17 @@ public:
 	string getISBN() const;
 	bool getEtatEmprunt() const;
 	string getCategorie() const;
-	//Bibliotheque* getBiblioOriginel();
-	//Bibliotheque* getBiblioActuel();
+	string getCode_biblioOriginel() const;
+	string getCode_biblioActuel() const;
 
 	void setEtatEmprunt(bool);
 	void setCode_Livre(string);
-	//void setBiblioOriginel(Bibliotheque*);
-	//void setBiblioOriginel();
+	void setCode_biblioOriginel(string);
+	void setCode_biblioActuel(string);
 
-	virtual void affiche();
+	virtual void affiche() =0;
 	bool Equals(Livre*);
+	friend ostream& operator<<(ostream& out, Livre &L);
 
 
 };

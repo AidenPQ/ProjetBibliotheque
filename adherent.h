@@ -23,6 +23,7 @@ public:
 	Adherent(string, string, Bibliotheque, string, string);
 	void empruntLivre(string);
 	void rendreLivre(Livre*);
+	ListeNoeudlivre getListeEmprunt() const;
 
 };
 

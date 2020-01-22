@@ -80,6 +80,14 @@ void Livre::setEtatEmprunt(bool o){
 	etatEmprunt = o;
 }
 
+void Livre::setCode_biblioOriginel(string cdb){
+	code_biblioOriginel = cdb;
+}
+void Livre::setCode_biblioActuel(string cdl){
+	code_biblioActuel = cdl;
+}
+
+
 
 
 string Livre::getAuteur() const{
@@ -109,6 +117,16 @@ bool Livre::getEtatEmprunt() const{
 string Livre::getCategorie() const{
 	return categorie;
 }
+
+
+string Livre::getCode_biblioOriginel() const{
+	return code_biblioOriginel;
+}
+
+string Livre::getCode_biblioActuel() const{
+	return code_biblioActuel;
+}
+
 
 
 

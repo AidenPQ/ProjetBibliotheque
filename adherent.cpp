@@ -47,6 +47,10 @@ void Adherent::rendreLivre(Livre* livre){
 
 }
 
+ListeNoeudlivre Adherent::getListeEmprunt() const{
+	return listeEmprunt;
+}
+
 
 
 
