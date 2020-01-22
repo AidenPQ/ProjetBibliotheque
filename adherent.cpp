@@ -16,7 +16,7 @@ Adherent::Adherent(string name, string surname, Bibliotheque biblio, string adr,
 	biblioInscrit=biblio;
 	adresse=adr;
 	numAdherent=numadh;
-	nbrEmpruntAuto=10;
+	nbrEmpruntAuto=3;
 }
 
 void Adherent::empruntLivre(string code){
