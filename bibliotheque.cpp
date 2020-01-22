@@ -166,8 +166,11 @@ string Bibliotheque::getCode_biblio() const{
 }
 
 void Bibliotheque::supprimLivre(Livre* livre){
-	if(!livre->getEtatEmprunt()){
+	if(!livre->getEtatEmprunt() && livre->getCode_biblioOriginel()==livre->getCode_biblioActuel()){
 		listeLivres.enleve(livre);
+	}
+	else{
+		cout<<"suppression impossible"<<endl;
 	}
 }
 
