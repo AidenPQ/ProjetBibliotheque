@@ -87,7 +87,13 @@ void Livre::setCode_biblioActuel(string cdl){
 	code_biblioActuel = cdl;
 }
 
+void Livre::setEtatPret(bool etat){
+	etatPret = etat;
+}
 
+bool Livre::getEtatPret() const{
+	return etatPret;
+}
 
 
 string Livre::getAuteur() const{

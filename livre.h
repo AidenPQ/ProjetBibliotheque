@@ -22,6 +22,7 @@ protected:
 	string ISBN;
 	string publique;
 	bool etatEmprunt;
+	bool etatPret;
 	string categorie;
 	string code_biblioOriginel;
 	string code_biblioActuel;
@@ -41,8 +42,10 @@ public:
 	string getCategorie() const;
 	string getCode_biblioOriginel() const;
 	string getCode_biblioActuel() const;
+	bool getEtatPret() const;
 
 	void setEtatEmprunt(bool);
+	void setEtatPret(bool);
 	void setCode_Livre(string);
 	void setCode_biblioOriginel(string);
 	void setCode_biblioActuel(string);

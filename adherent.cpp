@@ -23,7 +23,7 @@ void Adherent::empruntLivre(string code){
 	if(nbrEmpruntAuto>0){
 		Livre* emprunt = NULL;
 		emprunt = biblioInscrit.getListeLivres().recherche(code);
-		if (!emprunt->getEtatEmprunt())
+		if (!emprunt->getEtatEmprunt() && !emprunt->getEtatPret())
 		{
 			emprunt->setEtatEmprunt(true);
 			listeEmprunt.ajoute(emprunt);
