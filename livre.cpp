@@ -19,6 +19,7 @@ Livre::Livre(){
 	categorie = "livre";
 	code_biblioOriginel = "";
 	code_biblioActuel = "";
+	etatPret = false;
 }
 
 Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
@@ -31,6 +32,7 @@ Livre::Livre(string aut, string tit, string isbn, string pub, string cdl){
 	categorie = "livre";
 	code_biblioOriginel = "";
 	code_biblioActuel = "";
+	etatPret = false;
 
 }
 
@@ -44,6 +46,7 @@ Livre::Livre(const Livre &l){
 	categorie = "roman";
 	code_biblioOriginel = "";
 	code_biblioActuel = "";
+	etatPret = false;
 }
 
 Livre::~Livre(){
@@ -58,6 +61,7 @@ void Livre::affiche(){
 	cout << "Public vise: " << publique << endl;
 	cout << "Code du Livre: " << code_livre << endl;
 	cout << "Emprunte : " << etatEmprunt << endl;
+	cout << "Prete: " << etatPret << endl;
 }
 
 

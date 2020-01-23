@@ -74,10 +74,8 @@ void ListeNoeudlivre::affiche(){
 
 ostream& operator<<(ostream& out, ListeNoeudlivre &l){
 	for(Noeudlivre *courant = l.premier; courant != NULL; courant = courant->getSuivant()){
-		if(!courant->getLivre()->getEtatPret()){
 			courant->getLivre()->affiche();
 			out << "" << endl;
-		}
 		}
 	return out;
 }

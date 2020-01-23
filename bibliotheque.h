@@ -39,6 +39,7 @@ public:
 
 	ListeNoeudlivre getListeLivres();
 	string getCode_biblio() const;
+	string getNom() const;
 	void setListelivres(ListeNoeudlivre&);
 
 	friend bool operator==(Bibliotheque&,Bibliotheque&);

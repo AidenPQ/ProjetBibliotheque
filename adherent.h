@@ -14,17 +14,17 @@ class Adherent{
 private:
 	string nom;
 	string prenom;
-	Bibliotheque biblioInscrit;
+	Bibliotheque* biblioInscrit;
 	string adresse;
 	string numAdherent;
 	int nbrEmpruntAuto;
 	ListeNoeudlivre listeEmprunt;
 public:
-	Adherent(string, string, Bibliotheque, string, string);
+	Adherent(string, string, Bibliotheque*, string, string);
 	void empruntLivre(string);
 	void rendreLivre(Livre*);
 	ListeNoeudlivre getListeEmprunt() const;
-
+	friend ostream& operator<<(ostream& out, Adherent &A);
 };
 
 

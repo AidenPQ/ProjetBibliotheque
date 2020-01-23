@@ -70,7 +70,18 @@ void Bibliotheque::affiche()
 }
 
 ostream& operator<<(ostream& out, Bibliotheque &B){
-	out<<"Nom de la bibliotheque: " << B.nom << endl<<"Adresse: " << B.adresse << endl<<"Code de la bibliotheque: " << B.code_biblio << endl<<"" << endl<<"Livres de la Bibliotheque: " << endl<<B.listeLivres<<endl;
+	out<<"Nom de la bibliotheque: " << B.nom << endl<<"Adresse: " << B.adresse << endl<<"Code de la bibliotheque: " << B.code_biblio << endl<<"" << endl<<"Livres de la Bibliotheque: " << endl;
+	for(Noeudlivre *courant = B.getListeLivres().getPremier(); courant != NULL; courant = courant->getSuivant()){
+		if(courant->getLivre()->getEtatPret()){
+			if(courant->getLivre()->getCode_biblioOriginel() != B.getCode_biblio()){
+				courant->getLivre()->affiche();
+			}
+		}
+		else{
+			courant->getLivre()->affiche();
+		}
+		out << "" << endl;
+	}
 	return out;
 }
 
@@ -86,13 +97,12 @@ void Bibliotheque::afficheParCategorie(string cat){
 
 void Bibliotheque::demandeLivre(Bibliotheque* biblio, string isbn){
 	Livre* livreEmprunte = biblio->getListeLivres().rechercheISBN(isbn);
-	bool BiblioDejaPresent = false;
-	int rang = 0;
 	if(livreEmprunte == NULL || livreEmprunte->getEtatEmprunt() || livreEmprunte->getEtatPret()){
 		cout << "ce livre n'existe pas dans cette bibliotheque ou n'est pas disponible pour echange." << endl;
 	}
-		livreEmprunte->setEtatPret(true);
-		listeLivres.ajoute(livreEmprunte);
+	livreEmprunte->setCode_biblioActuel(code_biblio);
+	livreEmprunte->setEtatPret(true);
+	listeLivres.ajoute(livreEmprunte);
 }
 
 
@@ -101,62 +111,23 @@ ListeNoeudlivre Bibliotheque::getListeLivres(){
 }
 
 void Bibliotheque::rendreLivres(){
-	ListeNoeudlivre LivreArendre;
-	int i = 0;
 	if(listeLivres.getPremier()->getLivre()->getCode_biblioOriginel() != listeLivres.getPremier()->getLivre()->getCode_biblioActuel() && !listeLivres.getPremier()->getLivre()->getEtatEmprunt()){
 		ListeNoeudlivre L;
 		for(Noeudlivre *courant = listeLivres.getPremier()->getSuivant(); courant != NULL ; courant = courant->getSuivant()){
 			L.ajoute(courant->getLivre());
 		}
-		LivreArendre.ajoute(listeLivres.getPremier()->getLivre());
+		listeLivres.getPremier()->getLivre()->setEtatPret(false);
+		listeLivres.getPremier()->getLivre()->setCode_biblioActuel(listeLivres.getPremier()->getLivre()->getCode_biblioOriginel());
 		listeLivres = L;
 	}
 	for(Noeudlivre *courant = listeLivres.getPremier()->getSuivant(); courant != NULL ; courant = courant->getSuivant()){
 		if(courant->getLivre()->getCode_biblioOriginel() != courant->getLivre()->getCode_biblioActuel() && !courant->getLivre()->getEtatEmprunt()){
-			LivreArendre.ajoute(courant->getLivre());
-			i++;
+			courant->getLivre()->setEtatPret(false);
+			courant->getLivre()->setCode_biblioActuel(courant->getLivre()->getCode_biblioOriginel());
 			listeLivres.enleve(courant->getLivre());
 		}
 	}
-	/*for(Noeudlivre* courant = LivreArendre.getPremier(); courant != NULL; courant = courant->getSuivant()){
-		for(int b = 0; b < nbre_bibliothequePret; b++){
-			if(courant->getLivre()->getCode_biblioOriginel() == ListeBibliothequesPret[b]->getCode_biblio()){
-				ListeNoeudlivre L;
-				for(Noeudlivre *courant1 = ListeBibliothequesPret[b]->getListeLivres().getPremier()->getSuivant(); courant1 != NULL ; courant1 = courant1->getSuivant()){
-					L.ajoute(courant1->getLivre());
-				}
-				L.ajoute(courant->getLivre());
-				ListeBibliothequesPret[b]->setListelivres(L);
-				cout << ListeBibliothequesPret << endl;
-			}
-		}*/
-		for(int b = 0; b < nbre_bibliothequePret; b++){
-			for(Noeudlivre* courant = LivreArendre.getPremier(); courant != NULL; courant = courant->getSuivant()){
-				if(courant->getLivre()->getCode_biblioOriginel() == ListeBibliothequesPret[b]->getCode_biblio()){
-					ListeNoeudlivre L;
-					for(Noeudlivre *courant1 = ListeBibliothequesPret[b]->getListeLivres().getPremier()->getSuivant(); courant1 != NULL ; courant1 = courant1->getSuivant()){
-						L.ajoute(courant1->getLivre());
-					}
-					L.ajoute(courant->getLivre());
-					ListeBibliothequesPret[b]->setListelivres(L);
-				}
-			}
-			cout << ListeBibliothequesPret[b] << endl;
-		}
 
-	/*for(Noeudlivre *courant = listeLivres.getPremier(); courant != NULL ; courant = courant->getSuivant()){
-			if(courant->getLivre()->getCode_biblioOriginel() != courant->getLivre()->getCode_biblioActuel()){
-				for(int i = 0; i < nbre_tailleListeBibliothequesPret; i++){
-					if(ListeBibliothequesPret[i]->getCode_biblio() == courant->getLivre()->getCode_biblioOriginel()){
-						if(!courant->getLivre()->getEtatEmprunt()){
-							ListeBibliothequesPret[i]->getListeLivres().ajoute(courant->getLivre());
-							courant->getLivre()->getCode_biblioActuel() = courant->getLivre()->getCode_biblioOriginel();
-							listeLivres.enleve(courant->getLivre());
-						}
-					}
-				}
-			}
-		}*/
 }
 
 string Bibliotheque::getCode_biblio() const{
@@ -170,6 +141,10 @@ void Bibliotheque::supprimLivre(Livre* livre){
 	else{
 		cout<<"suppression impossible"<<endl;
 	}
+}
+
+string Bibliotheque::getNom() const{
+	return nom;
 }
 
 void Bibliotheque::setListelivres(ListeNoeudlivre& L){

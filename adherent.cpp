@@ -9,7 +9,7 @@ using namespace std;
 #include "adherent.h"
 #include "bibliotheque.h"
 
-Adherent::Adherent(string name, string surname, Bibliotheque biblio, string adr, string numadh) : listeEmprunt()
+Adherent::Adherent(string name, string surname, Bibliotheque* biblio, string adr, string numadh) : listeEmprunt()
 {
 	nom=name;
 	prenom=surname;
@@ -22,7 +22,7 @@ Adherent::Adherent(string name, string surname, Bibliotheque biblio, string adr,
 void Adherent::empruntLivre(string code){
 	if(nbrEmpruntAuto>0){
 		Livre* emprunt = NULL;
-		emprunt = biblioInscrit.getListeLivres().recherche(code);
+		emprunt = biblioInscrit->getListeLivres().recherche(code);
 		if (!emprunt->getEtatEmprunt() && !emprunt->getEtatPret())
 		{
 			emprunt->setEtatEmprunt(true);
@@ -49,6 +49,16 @@ void Adherent::rendreLivre(Livre* livre){
 
 ListeNoeudlivre Adherent::getListeEmprunt() const{
 	return listeEmprunt;
+}
+
+ostream& operator<<(ostream& out, Adherent &A){
+	out << "Nom: " << A.nom << endl << "Prenom: " << A.prenom << endl << "Numero d'adherent: " << A.numAdherent << endl << "Adresse: " << A.adresse << endl << "Nom de la bibliotheque: " << A.biblioInscrit->getNom() << endl << "" << endl;
+	for(Noeudlivre *courant = A.getListeEmprunt().getPremier(); courant != NULL; courant = courant->getSuivant()){
+			courant->getLivre()->affiche();
+			out << "" << endl;
+		}
+	return out;
+
 }
 
 
