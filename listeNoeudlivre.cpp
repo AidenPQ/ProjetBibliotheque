@@ -11,6 +11,13 @@ ListeNoeudlivre::ListeNoeudlivre(){
 	premier = NULL;
 }
 
+ListeNoeudlivre::~ListeNoeudlivre(){
+	if(premier == NULL){
+		delete(this);
+	}
+
+}
+
 void ListeNoeudlivre::ajoute(Livre* l){
 	Noeudlivre* N = new Noeudlivre(l);
 	N->setSuivant(premier);

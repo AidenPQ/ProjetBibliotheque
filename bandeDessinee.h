@@ -17,6 +17,7 @@ private:
 public:
 	BandeDessinee(string, string, string, string, string, string="");
 	BandeDessinee (const BandeDessinee&);
+	~BandeDessinee();
 	void affiche();
 	string getDessinateur() const;
 

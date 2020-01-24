@@ -13,6 +13,10 @@ PieceDeTheatre::PieceDeTheatre(string aut, string tit, string isbn, string pub, 
 	this->categorie = "pieceDeTheatre";
 
 }
+
+PieceDeTheatre::~PieceDeTheatre(){
+	delete(this);
+}
 string PieceDeTheatre::getSiecle()const{
 	return siecle;
 

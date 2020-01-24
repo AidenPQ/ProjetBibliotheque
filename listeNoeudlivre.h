@@ -16,6 +16,7 @@ private:
 
 public:
 	ListeNoeudlivre();
+	~ListeNoeudlivre();
 
 	void ajoute(Livre*);
 	void enleve(Livre*);

@@ -50,7 +50,7 @@ Livre::Livre(const Livre &l){
 }
 
 Livre::~Livre(){
-
+	delete(this);
 }
 
 

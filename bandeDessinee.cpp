@@ -18,6 +18,10 @@ string BandeDessinee::getDessinateur()const{
 
 }
 
+BandeDessinee::~BandeDessinee(){
+	delete(this);
+}
+
 BandeDessinee::BandeDessinee(const BandeDessinee &rom):Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
 	dessinateur= rom.getDessinateur();
 	this->categorie = "bandeDessinee";

@@ -15,6 +15,10 @@ Roman::Roman(string aut, string tit, string isbn, string pub, string gnr, string
 	this->categorie = "roman";
 }
 
+Roman::~Roman(){
+	delete(this);
+}
+
 
 Roman::Roman(const Roman &rom) : Livre(rom.getAuteur(), rom.getTitre(), rom.getISBN(), rom.getPublique(), rom.getCode_livre()){
 	genre = rom.getGenre();

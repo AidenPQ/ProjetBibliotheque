@@ -14,6 +14,10 @@ RecueilPoesie::RecueilPoesie(string aut, string tit, string isbn, string pub, st
 	this->categorie = "recueilPeosie";
 
 }
+
+RecueilPoesie::~RecueilPoesie(){
+	delete(this);
+}
 string RecueilPoesie::getFormat()const{
 	return formatPoesie;
 

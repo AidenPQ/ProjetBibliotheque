@@ -25,11 +25,12 @@ void Adherent::empruntLivre(string code){
 		emprunt = biblioInscrit->getListeLivres().recherche(code);
 		if (!emprunt->getEtatEmprunt())
 		{
-			if(!emprunt->getEtatPret() || (emprunt->code_biblioActuel == biblioInscrit->getCode_biblio())){
+			if(!emprunt->getEtatPret() || (emprunt->getCode_biblioActuel() == biblioInscrit->getCode_biblio())){
 			emprunt->setEtatEmprunt(true);
 			listeEmprunt.ajoute(emprunt);
 			nbrEmpruntAuto--;
 			}
+
 		}
 		else{
 			cout << "Livre Indisponible pour emprunt" << endl;

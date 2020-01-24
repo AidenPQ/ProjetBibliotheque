@@ -22,12 +22,6 @@ Bibliotheque::Bibliotheque(string name, string address, string cd_biblio) : list
 	code_biblio = cd_biblio;
 	nbre_livres = 0;
 	code_livres = 0;
-	nbre_tailleListeBibliothequesPret = 10;
-	nbre_bibliothequePret = 0;
-	ListeBibliothequesPret = new Bibliotheque*[nbre_tailleListeBibliothequesPret];
-	for(int i = 0; i < nbre_tailleListeBibliothequesPret; i++){
-		ListeBibliothequesPret[i] = NULL;
-	}
 }
 
 Bibliotheque::Bibliotheque() : listeLivres()
@@ -37,12 +31,10 @@ Bibliotheque::Bibliotheque() : listeLivres()
 	code_biblio = "";
 	nbre_livres = 0;
 	code_livres = 0;
-	nbre_tailleListeBibliothequesPret = 10;
-	nbre_bibliothequePret = 0;
-	ListeBibliothequesPret = new Bibliotheque*[nbre_tailleListeBibliothequesPret];
-	for(int i = 0; i < nbre_tailleListeBibliothequesPret; i++){
-			ListeBibliothequesPret[i] = NULL;
-	}
+}
+
+Bibliotheque::~Bibliotheque(){
+	delete(this);
 }
 
 void Bibliotheque::achatLivre(Livre* livre)
@@ -158,17 +150,5 @@ bool operator==(Bibliotheque &B1,Bibliotheque &B2){
 		return false;
 }
 
-void Bibliotheque::doubleTableau(){
-	int newsize = nbre_tailleListeBibliothequesPret*2;
-	Bibliotheque** tab1 = new Bibliotheque*[newsize];
-	for(int i = 0; i < newsize; i++){
-			tab1[i] = NULL;
-		}
-	for(int i = 0; i < nbre_tailleListeBibliothequesPret; i++){
-		tab1[i] = ListeBibliothequesPret[i];
-	}
-	ListeBibliothequesPret = tab1;
-	nbre_tailleListeBibliothequesPret = newsize;
-}
 
 

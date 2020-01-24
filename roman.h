@@ -17,6 +17,7 @@ private:
 public:
 	Roman(string, string, string, string, string, string="");
 	Roman(const Roman&);
+	~Roman();
 	void affiche();
 	string getGenre() const;
 

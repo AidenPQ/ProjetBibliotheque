@@ -18,6 +18,7 @@ private:
 public:
 	Noeudlivre(Livre* lv);
 	Noeudlivre(Livre* lv, Noeudlivre* sv);
+	~Noeudlivre();
 
 	Livre* getLivre() const;
 	Noeudlivre* getSuivant();

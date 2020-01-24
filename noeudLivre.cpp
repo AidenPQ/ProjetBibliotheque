@@ -18,6 +18,10 @@ Noeudlivre::Noeudlivre(Livre* lv, Noeudlivre *sv){
 	suivant = sv;
 }
 
+Noeudlivre::~Noeudlivre(){
+	delete(this);
+}
+
 Livre* Noeudlivre::getLivre() const{
 	return lvr;
 }
